@@ -43,6 +43,9 @@ const rule = {
           validateAndReplaceText(node);
         }
       },
+      JSXText(node) {
+        validateAndReplaceText(node);
+      },
     };
   },
 };
