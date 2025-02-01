@@ -1,8 +1,8 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
-import noRelativeImportPathsPlugin from "eslint-plugin-no-relative-import-paths"; // ✅ 추가된 플러그인
-import prettierPlugin from "eslint-plugin-prettier"; // ✅ 플러그인 불러오기
+import noRelativeImportPathsPlugin from "eslint-plugin-no-relative-import-paths";
+import prettierPlugin from "eslint-plugin-prettier";
 import customRules from "./eslint-rules/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
