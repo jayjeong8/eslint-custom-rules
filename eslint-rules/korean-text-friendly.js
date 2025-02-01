@@ -17,24 +17,22 @@ const rule = {
 
   create(context) {
     function validateAndReplaceText(node) {
-      let newValue = node.value;
-      let hasReplacement = false;
+      const replacementList = Object.entries(textReplacements);
+      const oldValue = node.value;
+      const newValue = replacementList.reduce(
+        (acc, [original, suggested]) =>
+          acc.includes(original)
+            ? acc.replace(new RegExp(original, "g"), suggested)
+            : acc,
+        oldValue,
+      );
 
-      Object.entries(textReplacements).forEach(([original, suggested]) => {
-        if (newValue.includes(original)) {
-          newValue = newValue.replace(new RegExp(original, "g"), suggested);
-          hasReplacement = true;
-        }
-      });
-
-      if (hasReplacement) {
+      if (newValue !== oldValue) {
         context.report({
           node,
           messageId: "changeText",
-          data: { original: node.value, suggested: newValue },
-          fix(fixer) {
-            return fixer.replaceText(node, `"${newValue}"`);
-          },
+          data: { original: oldValue, suggested: newValue },
+          fix: (fixer) => fixer.replaceText(node, `"${newValue}"`),
         });
       }
     }
