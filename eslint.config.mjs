@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import noRelativeImportPathsPlugin from "eslint-plugin-no-relative-import-paths"; // ✅ 추가된 플러그인
 import prettierPlugin from "eslint-plugin-prettier"; // ✅ 플러그인 불러오기
+import customRules from "./eslint-rules/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -24,6 +25,7 @@ const eslintConfig = [
     plugins: {
       prettier: prettierPlugin,
       "no-relative-import-paths": noRelativeImportPathsPlugin,
+      "custom-rules": customRules,
     },
     rules: {
       "import/order": [
