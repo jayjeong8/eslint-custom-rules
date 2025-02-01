@@ -1,9 +1,7 @@
-## Template Repository
+## ESLint Custom Rules
 
-- next.js 15
-- typescript 5
-- eslint 9
-- tailwindcss 4
-
-#### 템플릿 리포지토리 만들기
-> https://docs.github.com/ko/repositories/creating-and-managing-repositories/creating-a-template-repository
+## 참고문서
+- [ESLint - Custom Rules Tutorial](https://eslint.org/docs/latest/extend/custom-rule-tutorial)
+- [ESLint - Custom Rules](https://eslint.org/docs/latest/extend/custom-rules#options-schemas)
+- [ESLint - Selectors](https://eslint.org/docs/latest/extend/selectors)
+ 
