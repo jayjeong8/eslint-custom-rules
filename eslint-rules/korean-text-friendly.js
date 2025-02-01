@@ -32,7 +32,13 @@ const rule = {
           node,
           messageId: "changeText",
           data: { original: oldValue, suggested: newValue },
-          fix: (fixer) => fixer.replaceText(node, `"${newValue}"`),
+          fix: (fixer) => {
+            if (node.type === "JSXText") {
+              return fixer.replaceText(node, newValue);
+            }
+
+            return fixer.replaceText(node, `"${newValue}"`);
+          },
         });
       }
     }
