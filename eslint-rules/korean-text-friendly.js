@@ -1,4 +1,4 @@
-import { textReplacements } from "./textReplacements.js";
+import textReplacements from "./textReplacements.json" with { type: "json" };
 
 const rule = {
   meta: {
