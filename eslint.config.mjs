@@ -29,6 +29,7 @@ const eslintConfig = [
     },
     rules: {
       "custom-rules/korean-text-friendly": "warn",
+      "custom-rules/useeffect-spacing": "warn",
       "import/order": [
         "error",
         {
